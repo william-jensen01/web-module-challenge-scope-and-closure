@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+A closure is when you have a function nested within a function. The nested function has access to the variables in the parent's scope
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +64,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+Closure is being used on the return line because the return line is a nested function
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+The only thing that stays the same is the name "Dan" since it was specified. newRoll changed because it was handled by the nest function which is a closure.
 c. What is the lexical scope of `newRoll`? 
+Variable name since the parent function has access to it
 
 ### Task 2c - Exit Ticket
 
