@@ -65,8 +65,7 @@ function counter2() {
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning(max_number){
-  const random_points = Math.floor(Math.random() * (max_number + 1));
-  return random_points;
+  return Math.floor(Math.random() * 3);
 }
 console.log("Inning between 0-2: ",inning(2));
 
@@ -84,14 +83,14 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(callback, num){
+function finalScore(callback, num_Innings){
   let score = {
     Home: 0,
     Away: 0,
   };
-  for (let i = 0; i < num; i++) {
-    score["Home"] += callback(2);
-    score["Away"] += callback(2);
+  for (let i = 0; i < num_Innings; i++) {
+    score["Home"] += callback();
+    score["Away"] += callback();
   };
   return score;
 }
@@ -133,13 +132,13 @@ function scoreboard(callback1, callback2, inning_num) {
 
     current_inning++
 
-    game_score += `${current_inning} inning: awayTeam ${away_score} - homeTeam ${home_score}\n`;
+    game_score += `${current_inning} inning: ${away_score} - ${home_score}\n`;
 
     if (home_score === away_score && current_inning >= inning_num) {
       i -= 1;
     }
   }
-  game_score += `Final Score: awayTeam ${away_score} - homeTeam ${home_score}`;
+  game_score += `Final Score: ${away_score} - ${home_score}`;
   return game_score
 }
 console.log(scoreboard(getInningScore, inning, 9))
